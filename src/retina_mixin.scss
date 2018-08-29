@@ -1,0 +1,17 @@
+@mixin background-image-retina($file) {
+	background-image: image-url($file);
+ 
+	@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 144dpi) {
+		& {
+			background-image: image-url($file + '.png');
+		}
+	}
+}
+
+
+
+// USAGE //
+// example.scss //
+// .some-block {// 
+// 	@include background-image-retina('logo');// 
+// }// 
